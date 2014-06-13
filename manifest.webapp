@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "name": "Background Sync Demo",
+  "description": "Demonstrate navigator.requestSync",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/app-icons/icon-16.png",
+    "48": "/app-icons/icon-48.png",
+    "128": "/app-icons/icon-128.png"
+  },
+  "developer": {
+    "name": "Carlos and Jed",
+    "url": "https://github.com/jedp/fxos-sync-demo/"
+  },
+  "permissions": {
+    "systemXHR": {}
+  }
+}
