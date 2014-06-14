@@ -38,20 +38,30 @@ window.onload = function() {
       // toolkit/modules/SyncScheduler.jsm will emit a 'sync' system
       // message when it's time for us to sync.
       navigator.mozSetMessageHandler('sync', function() {
-        document.getElementById('feedback').innerHTML =
-          "Received sync system message at " + Date.now();
-      });
+        this.sync();
+      }.bind(this));
 
       // Kick things off by requesting periodic sync
       // (at a ludicrously short interval)
       navigator.syncScheduler.requestSync("sync-demo", {
         description: "Pull down @mozilla tweets",
-        minInterval: 10 * 1000,   // (ms) short interval for testing
+        minInterval: 5,   // (seconds) short interval for testing
         repeating: true
       });
     },
 
     sync: function() {
+      var message = "Ohai!  New sync message!";
+      console.log("** " + message);
+
+      document.getElementById('feedback').innerHTML =
+        "Received last message at " + Date.now();
+
+      if (Notification.permission == "granted") {
+        new Notification(message);
+      } else {
+        this.error("What? Can't display a notification???");
+      }
     },
 
     error: function(name) {

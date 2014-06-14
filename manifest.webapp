@@ -13,6 +13,7 @@
     "url": "https://github.com/jedp/fxos-sync-demo/"
   },
   "permissions": {
-    "systemXHR": {}
+    "systemXHR": {},
+    "desktop-notification": {}
   }
 }
