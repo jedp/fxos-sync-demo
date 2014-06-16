@@ -57,11 +57,13 @@ window.onload = function() {
       document.getElementById('feedback').innerHTML =
         "Received last message at " + Date.now();
 
-      if (Notification.permission == "granted") {
-        new Notification(message);
-      } else {
-        this.error("What? Can't display a notification???");
-      }
+      CoolClock.config.clockTracker["clock"].time = new Date();
+
+      // if (Notification.permission == "granted") {
+      //   new Notification(message);
+      // } else {
+      //   this.error("What? Can't display a notification???");
+      // }
     },
 
     error: function(name) {

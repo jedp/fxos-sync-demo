@@ -255,7 +255,7 @@ CoolClock.prototype = {
 
 	// Check the time and display the clock
 	refreshDisplay: function() {
-		var now = new Date();
+		var now = this.time;
 		if (this.gmtOffset != null) {
 			// Use GMT + gmtOffset
 			var offsetNow = new Date(now.valueOf() + (this.gmtOffset * 1000 * 60 * 60));
@@ -283,7 +283,8 @@ CoolClock.prototype = {
 			this.refreshDisplay()
 			this.nextTick();
 		}
-	}
+	},
+  time: new Date()
 };
 
 // Find all canvas elements that have the CoolClock class and turns them into clocks
