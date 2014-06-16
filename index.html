@@ -9,6 +9,7 @@
     <!-- link href="styles/normalize.css" rel="stylesheet" type="text/css" / -->
     <link href="styles/app.css" rel="stylesheet" type="text/css" />
     <link href="styles/install-button.css" rel="stylesheet" type="text/css" />
+    <link href="styles/normalize.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="styles/action_menu.css">
     <link rel="stylesheet" href="styles/buttons.css">
@@ -38,26 +39,29 @@
 <body>
 
   <section id="index" role="region">
-      <h3>Sync Demo</h3>
+    <header class="fixed">
+      <h1>Sync Demo</h1>
+    </header>
 
-    <button class="recommend" role="button" id="button.install" href="#">Drink me!</button>
+    <div class="content">
+      <button class="recommend" role="button" id="button.install" href="#">Drink me!</button>
 
-    <select name="sync-repeat" data-value-type="string">
-        <option>Never auto-sync</option>
-        <option>Sync every minute</option>
-        <option>Sync every 10 mins</option>
-        <option>Sync every hour</option>
-        <option>Sync every 6 hours</option>
-        <option>Sync every 12 hours</option>
-        <option>Sync once a day</option>
-    </select>
+      <select name="sync-repeat" data-value-type="string">
+          <option>Never auto-sync</option>
+          <option>Sync every minute</option>
+          <option>Sync every 10 mins</option>
+          <option>Sync every hour</option>
+          <option>Sync every 6 hours</option>
+          <option>Sync every 12 hours</option>
+          <option>Sync once a day</option>
+      </select>
 
-    <button class="recommend" role="button" id="sync-now" href="#">Sync ASAP</button>
+      <button class="recommend" role="button" id="sync-now" href="#">Sync ASAP</button>
 
-    <p id="feedback"></p>
+      <p id="feedback"></p>
 
-    <canvas id="clock" class="CoolClock" style="width: 100px;height: 100px;"></canvas>
-    
+      <canvas id="clock" class="CoolClock" style="width: 50px;height: 50px;"></canvas>
+    </div>
   </section>
 
   <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
