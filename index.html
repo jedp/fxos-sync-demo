@@ -6,7 +6,7 @@
 
     <title>navigator.requestSync demo</title>
 
-    <link href="styles/normalize.css" rel="stylesheet" type="text/css" />
+    <!-- link href="styles/normalize.css" rel="stylesheet" type="text/css" / -->
     <link href="styles/app.css" rel="stylesheet" type="text/css" />
     <link href="styles/install-button.css" rel="stylesheet" type="text/css" />
 
@@ -38,25 +38,21 @@
 <body>
 
   <section id="index" role="region">
-    <header class="fixed">
-      <h1>Sync Demo</h1>
-    </header>
+      <h3>Sync Demo</h3>
 
     <button class="recommend" role="button" id="button.install" href="#">Drink me!</button>
 
-    <p>Repeated sync frequency:</p>
     <select name="sync-repeat" data-value-type="string">
-        <option>Never</option>
-        <option>One Minute</option>
-        <option>Ten Minutes</option>
-        <option>One Hour</option>
-        <option>Six Hours</option>
-        <option>Twelve Hours</option>
-        <option>One Day</option>
+        <option>Never auto-sync</option>
+        <option>Sync every minute</option>
+        <option>Sync every 10 mins</option>
+        <option>Sync every hour</option>
+        <option>Sync every 6 hours</option>
+        <option>Sync every 12 hours</option>
+        <option>Sync once a day</option>
     </select>
 
     <button class="recommend" role="button" id="sync-now" href="#">Sync ASAP</button>
-
 
     <p id="feedback"></p>
 
