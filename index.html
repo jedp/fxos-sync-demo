@@ -6,26 +6,47 @@
 
     <title>navigator.requestSync demo</title>
 
-    <link rel="stylesheet" type="text/css" href="styles/value_selector.css" />
-    <link rel="stylesheet" type="text/css" href="styles/buttons.css" />
+    <link href="styles/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="styles/app.css" rel="stylesheet" type="text/css" />
+    <link href="styles/install-button.css" rel="stylesheet" type="text/css" />
 
-    <!-- link href="styles/normalize.css" rel="stylesheet" type="text/css" / -->
-    <!-- link href="styles/app.css" rel="stylesheet" type="text/css" / -->
-    <!-- link href="styles/install-button.css" rel="stylesheet" type="text/css" / -->
+    <link rel="stylesheet" href="styles/action_menu.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/confirm.css">
+    <link rel="stylesheet" href="styles/edit_mode.css">
+    <link rel="stylesheet" href="styles/headers.css">
+    <link rel="stylesheet" href="styles/input_areas.css">
+    <link rel="stylesheet" href="styles/status.css">
+    <link rel="stylesheet" href="styles/switches.css">
+    <link rel="stylesheet" href="styles/drawer.css">
+    <link rel="stylesheet" href="styles/lists.css">
+    <link rel="stylesheet" href="styles/progress_activity.css">
+    <link rel="stylesheet" href="styles/scrolling.css">
+    <link rel="stylesheet" href="styles/seekbars.css">
+    <link rel="stylesheet" href="styles/tabs.css">
+    <link rel="stylesheet" href="styles/toolbars.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="icons/styles/action_icons.css">
+    <link rel="stylesheet" href="icons/styles/media_icons.css">
+    <link rel="stylesheet" href="icons/styles/comms_icons.css">
+    <link rel="stylesheet" href="icons/styles/settings_icons.css">
+
+    <!-- Transitions -->
+    <link rel="stylesheet" href="transitions.css">
 </head>
 <body>
 
-    <h1>BG Sync Test</h1>
+  <section id="index" role="region">
+    <header class="fixed">
+      <h1>Sync Demo</h1>
+    </header>
+    <p>Sync updates from twitter in the background</p>
 
-    <section>
-    <a class="recommend" role="button" id="button.install" href="#">Drink me!</a>
-    </section>
+    <button class="recommend" role="button" id="button.install" href="#">Drink me!</button>
 
-    <section>
     <p id="feedback"></p>
-    </section>
 
-    <section>
     <p>Repeated sync frequency:</p>
     <select name="sync-repeat" data-value-type="string">
         <option>Never</option>
@@ -36,17 +57,16 @@
         <option>Twelve Hours</option>
         <option>One Day</option>
     </select>
-    </section>
 
-    <section>
-    <a class="recommend" role="button" id="sync-now" href="#">Sync ASAP</a>
-    </section>
+    <button class="recommend" role="button" id="sync-now" href="#">Sync ASAP</button>
 
     <canvas id="clock" class="CoolClock" style="width: 100px;height: 100px;"></canvas>
     
-    <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="scripts/app.js"></script>
-    <script type="text/javascript" src="scripts/coolclock.js"></script>
-    <script type="text/javascript" src="scripts/moreskins.js"></script>
+  </section>
+
+  <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="scripts/app.js"></script>
+  <script type="text/javascript" src="scripts/coolclock.js"></script>
+  <script type="text/javascript" src="scripts/moreskins.js"></script>
 </body>
 </html>
