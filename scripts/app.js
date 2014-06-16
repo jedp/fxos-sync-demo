@@ -1,3 +1,13 @@
+var syncIntervals = {
+  0: 0,         // never
+  1: 1,         // every minute
+  2: 10,        // every 10 minutes
+  3: 60,
+  4: 60 * 6,
+  5: 60 * 12,
+  6: 60 * 24
+};
+
 window.onload = function() {
   function App() {
   }
@@ -41,6 +51,26 @@ window.onload = function() {
         this.sync();
       }.bind(this));
 
+      // When we change the repeating sync index
+      document.getElementById('sync-repeat').onchange = function(e) {
+        if (this.selectedIndex === 0) {
+          navigator.syncScheduler.unregisterSync("sync-demo");
+        } else {
+          navigator.syncScheduler.requestSync("sync-demo", {
+            description: "do this thing",
+            minInterval: syncIntervals[this.selectedIndex],
+            repeating: true
+          });
+        }
+      };
+
+      // When we press the Sync ASAP button
+      document.getElementById('sync-now').onclick = function(e) {
+        navigator.syncScheduler.requestSync("sync-demo", {
+          description: "do this thing"
+        });
+      };
+
       // Kick things off by requesting periodic sync
       // (at a ludicrously short interval)
       navigator.syncScheduler.requestSync("sync-demo", {
@@ -48,6 +78,7 @@ window.onload = function() {
         minInterval: 5,   // (seconds) short interval for testing
         repeating: true
       });
+
     },
 
     sync: function() {
